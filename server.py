@@ -19,6 +19,7 @@ def signer(key_file):
             response = run([ecdsatool_executable, tmp_file], stdin=secret, stdout=PIPE)
 
         return response.stdout
+    return sign
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     pass
